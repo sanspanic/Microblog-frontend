@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div class="container w-full py-5 px-2 sm:py-10 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-full rounded-xl">
+      <div class="container mx-auto w-full py-5 px-2 sm:py-10 m-4 my-4 text-center bg-white  h-full sm:rounded-xl">
         <Routes />
       </div>
       <Footer />
