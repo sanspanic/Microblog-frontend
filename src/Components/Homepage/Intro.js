@@ -11,49 +11,49 @@ const Intro = () => {
   return (
     <section className="text-gray-600 body-font">
       <div className="container py-32 md:py-0 mx-auto flex flex-col px-5 justify-center items-center ">
-        <div class="flex flex-wrap  mb-20">
-          <div class="flex flex-wrap w-1/2">
-            <div class="md:p-2 p-1 w-1/2">
+        <div className="flex flex-wrap  mb-20">
+          <div className="flex flex-wrap w-1/2">
+            <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
-                class="w-full object-cover h-full object-center block"
+                className="w-full object-cover h-full object-center block"
                 src={duotone2}
               />
             </div>
-            <div class="md:p-2 p-1 w-1/2">
+            <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
-                class="w-full object-cover h-full object-center block"
+                className="w-full object-cover h-full object-center block"
                 src={duotone3}
               />
             </div>
-            <div class="md:p-2 p-1 w-full">
+            <div className="md:p-2 p-1 w-full">
               <img
                 alt="gallery"
-                class="w-full h-full object-cover object-center block"
+                className="w-full h-full object-cover object-center block"
                 src={duotone1}
               />
             </div>
           </div>
-          <div class="flex flex-wrap w-1/2">
-            <div class="md:p-2 p-1 w-full">
+          <div className="flex flex-wrap w-1/2">
+            <div className="md:p-2 p-1 w-full">
               <img
                 alt="gallery"
-                class="w-full h-full object-cover object-center block"
+                className="w-full h-full object-cover object-center block"
                 src={duotone6}
               />
             </div>
-            <div class="md:p-2 p-1 w-1/2">
+            <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
-                class="w-full object-cover h-full object-center block"
+                className="w-full object-cover h-full object-center block"
                 src={duotone5}
               />
             </div>
-            <div class="md:p-2 p-1 w-1/2">
+            <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
-                class="w-full object-cover h-full object-center block"
+                className="w-full object-cover h-full object-center block"
                 src={duotone4}
               />
             </div>
@@ -62,7 +62,7 @@ const Intro = () => {
 
         <div className="w-full md:w-2/3 flex flex-col mt-20 sm:mt-10 md:mt-0 mb-16 items-center text-center">
           <h1 className="title-font sm:text-4xl text-3xl font-black text-black">
-            <img className="inline w-1/6" src={Logo}></img>
+            <img alt="logo" className="inline w-1/6" src={Logo}></img>
             <span> My2Cents</span>
           </h1>
           <p className="my-8 leading-relaxed">
