@@ -5,7 +5,7 @@ import PostsContext from "../../Context/PostsContext";
 import BlogApi from "../../api";
 
 const Form = ({ title, description, body, postId, setIsEditing, setPost }) => {
-  const { setPosts } = useContext(PostsContext);
+  const { setPosts, posts } = useContext(PostsContext);
   const initialFormData = title
     ? { title, description, body }
     : { title: "", description: "", body: "" };
@@ -17,7 +17,7 @@ const Form = ({ title, description, body, postId, setIsEditing, setPost }) => {
     try {
       const res = await BlogApi.addNewPost(formData);
       console.log(res);
-      setPosts(res);
+      setPosts([...posts, res]);
       history.push("/");
     } catch (e) {
       console.log(e);
