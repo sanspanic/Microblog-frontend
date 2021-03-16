@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../Assets/Imgs/Logo8_Navy.svg";
+import Logo from "../Assets/Imgs/logo.png";
 
 const Navbar = () => {
   return (
@@ -10,8 +10,10 @@ const Navbar = () => {
           to="/"
           className="flex title-font font-medium items-center justify-center md:justify-evenly text-black mb-4 md:mb-0"
         >
-          <img alt="logo" className="w-1/6" src={Logo}></img>
-          <span className="ml-3 text-xl">My2Cents</span>
+          <img alt="logo" className="w-2/6 " src={Logo}></img>
+          <span className="text-xl font-mono font-black tracking-widest">
+            My2Cents
+          </span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           {/*           <a className="mr-5 hover:text-gray-900">First Link</a>
@@ -19,7 +21,7 @@ const Navbar = () => {
         </nav>
         <Link
           to="/new"
-          className="text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-indigo-800 focus:ring focus:outline-none inline-flex items-center border-0 py-1 px-3  mt-4 md:mt-0"
+          className="text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-indigo-500 focus:ring focus:outline-none inline-flex items-center border-0 py-1 px-3  mt-4 md:mt-0"
         >
           Add New Post
           <svg

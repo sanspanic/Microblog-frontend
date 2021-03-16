@@ -19,12 +19,13 @@ class BlogApi {
 
   //individual API routes
 
+  //POSTS
+
   // [GET] /posts -> gets all posts saved in database
   static async getAllPosts() {
     let res = await this.request(`posts`);
     return res;
   }
-
   // [GET] /posts/:id -> gets one post by id
   static async getPostById(id) {
     let res = await this.request(`posts/${id}`);
@@ -43,6 +44,23 @@ class BlogApi {
   // [DELETE] /posts/:id -> delete existing post
   static async deletePost(id) {
     let res = await this.request(`posts/${id}`, {}, "delete");
+    return res;
+  }
+
+  //COMMENTS
+
+  // [POST] /posts/:id/comments -> add a new comment
+  static async addNewComment(data, id) {
+    let res = await this.request(`posts/${id}/comments`, data, "post");
+    return res;
+  }
+  // [DELETE] /posts/:id/comments/:commentId -> delete comment
+  static async removeComment(id, commentId) {
+    let res = await this.request(
+      `posts/${id}/comments/${commentId}`,
+      {},
+      "delete"
+    );
     return res;
   }
 }

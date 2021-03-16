@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import duotone1 from "../../Assets/Imgs/duotone1.png";
 import duotone2 from "../../Assets/Imgs/duotone2.png";
 import duotone3 from "../../Assets/Imgs/duotone3.png";
 import duotone4 from "../../Assets/Imgs/duotone4.png";
 import duotone5 from "../../Assets/Imgs/duotone5.png";
 import duotone6 from "../../Assets/Imgs/duotone6.png";
-import Logo from "../../Assets/Imgs/Logo8_Navy.svg";
-import Modal from "./Modal";
+import duotone7 from "../../Assets/Imgs/duotone7.png";
+import duotone8 from "../../Assets/Imgs/duotone8.png";
+import duotone9 from "../../Assets/Imgs/duotone9.png";
+import duotone10 from "../../Assets/Imgs/duotone10.png";
+import duotone11 from "../../Assets/Imgs/duotone11.png";
+import duotone12 from "../../Assets/Imgs/duotone12.png";
+import Logo from "../../Assets/Imgs/logo.png";
 
 const Intro = ({ setShowModals }) => {
   const handleAppClick = () => {
@@ -21,21 +26,21 @@ const Intro = ({ setShowModals }) => {
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src={duotone2}
+                src={duotone7}
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src={duotone3}
+                src={duotone8}
               />
             </div>
             <div className="md:p-2 p-1 w-full">
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src={duotone1}
+                src={duotone9}
               />
             </div>
           </div>
@@ -44,30 +49,30 @@ const Intro = ({ setShowModals }) => {
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src={duotone6}
+                src={duotone10}
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src={duotone5}
+                src={duotone11}
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src={duotone4}
+                src={duotone12}
               />
             </div>
           </div>
         </div>
 
         <div className="w-full md:w-2/3 flex flex-col mt-20 sm:mt-10 md:mt-0 mb-16 items-center text-center">
-          <h1 className="title-font sm:text-4xl text-3xl font-black text-black">
-            <img alt="logo" className="inline w-1/6" src={Logo}></img>
-            <span> My2Cents</span>
+          <h1 className="flex flex-col items-center title-font sm:text-4xl text-3xl font-black text-black">
+            <img alt="logo" className="w-3/6 -ml-6" src={Logo}></img>
+            <p className="tracking-widest"> My2Cents</p>
           </h1>
           <p className="my-8 leading-relaxed">
             Kickstarter biodiesel roof party wayfarers cold-pressed. Palo santo

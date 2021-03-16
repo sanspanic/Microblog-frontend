@@ -13,7 +13,7 @@ const CommentSection = ({ comments, removeComment }) => {
             className="bg-indigo-50 flex justify-between border border-indigo-800 rounded py-2 w-11/12 sm:w-4/6 mx-auto text-sm my-2"
           >
             <div className="mx-2">{c.text}</div>
-            <button onClick={() => removeComment(c)}>
+            <button onClick={() => removeComment(c, c.id)}>
               <Trash className="mx-2 text-blue-800" size={24} />
             </button>
           </li>

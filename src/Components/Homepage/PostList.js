@@ -22,13 +22,13 @@ const PostList = () => {
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">
-      <h2 className="text-left font-bold text-indigo-500 text-4xl sm:ml-4 md: md:ml-10">
+      <h2 className="text-left font-bold text-purple-400 text-4xl sm:ml-4 md: md:ml-10">
         All Blog Posts <ArrowRight className="inline" size={24} />
         <ArrowRight className="inline" size={24} />
         <ArrowRight className="inline" size={24} />
       </h2>
       <div className="container px-5 py-24 mx-auto">
-        <div className="-my-8 divide-y-2 divide-gray-100">
+        <div className="">
           {posts.map((p) => (
             <PostSummary
               key={uuid()}

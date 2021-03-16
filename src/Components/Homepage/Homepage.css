@@ -5,3 +5,43 @@
 .background {
     background-image: conic-gradient(from -270deg at 50% -5%, yellow, yellowgreen)
 }
+
+.background2 {
+    background-image: url(../../Assets/Imgs/blackOil.gif)
+}
+
+#summary.bars-title-bars {
+    position: relative;
+  }
+  
+  #summary.bars::before, #summary.bars::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #c183e0;
+    transform: scaleY(0);
+    transition: transform 0.5s ease;
+  }
+  
+  #summary.bars::before {
+    left: -8px;
+    transform-origin: center top;
+  }
+  
+  #summary.bars:hover::before {
+    transform-origin: center bottom;
+    transform: scaleY(1);
+  }
+  
+  #summary.bars::after {
+    right: -8px;
+    transform-origin: center bottom;
+  }
+  
+  #summary.bars:hover::after {
+    transform-origin: center top;
+    transform: scaleY(1);
+  }
+  

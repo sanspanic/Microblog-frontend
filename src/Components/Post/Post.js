@@ -6,7 +6,6 @@ import CommentSection from "./CommentSection";
 import Form from "./Form";
 import BlogApi from "../../api";
 import { useParams, useHistory } from "react-router-dom";
-import PostsContext from "../../Context/PostsContext";
 
 const Post = () => {
   const history = useHistory();
@@ -24,8 +23,14 @@ const Post = () => {
   const addComment = (comment) => {
     setComments([...comments, comment]);
   };
-  const removeComment = (comment) => {
-    setComments(comments.filter((c) => c !== comment));
+  const removeComment = async (comment, commentId) => {
+    try {
+      const res = await BlogApi.removeComment(postId, commentId);
+      console.log(res);
+      setComments(comments.filter((c) => c !== comment));
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   useEffect(() => {
@@ -38,7 +43,7 @@ const Post = () => {
       //set post and comments
     };
     getPost(postId);
-  }, []);
+  }, [postId]);
 
   const handleDelete = async () => {
     try {
@@ -95,7 +100,7 @@ const Post = () => {
               {post.body}
             </p>
             <CommentSection comments={comments} removeComment={removeComment} />
-            <CommentForm addComment={addComment} />
+            <CommentForm addComment={addComment} postId={postId} />
           </>
         )}
       </div>

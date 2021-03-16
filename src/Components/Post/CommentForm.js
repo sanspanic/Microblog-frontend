@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
+import BlogApi from "../../api";
 
-const CommentForm = ({ addComment }) => {
-  const initialFormData = { comment: "" };
+const CommentForm = ({ addComment, postId }) => {
+  const initialFormData = { text: "" };
   const [formData, setFormData] = useState(initialFormData);
 
   const handleChange = (e) => {
@@ -13,27 +13,31 @@ const CommentForm = ({ addComment }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addComment({ text: formData.comment, id: uuid() });
+    try {
+      const res = await BlogApi.addNewComment(formData, postId);
+      console.log(res);
+      addComment({ text: res.text, id: res.id });
+    } catch (e) {
+      console.log(e);
+    }
+
     setFormData(initialFormData);
   };
   return (
     <div className="py-10 border-t border-black mt-10">
       <form onSubmit={handleSubmit}>
-        <label
-          htmlFor="comment"
-          className="block text-sm leading-7 text-gray-600"
-        >
+        <label htmlFor="text" className="block text-sm leading-7 text-gray-600">
           Add Comment
         </label>
         <textarea
           className="w-11/12 sm:w-4/6 px-4 py-2 mb-4 text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg mr-4text-base focus:border-gray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
-          name="comment"
-          id="comment"
+          name="text"
+          id="text"
           type="textarea"
           rows="3"
-          value={formData.comment}
+          value={formData.text}
           onChange={handleChange}
         ></textarea>
         <button className="mx-auto block text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-indigo-800 focus:ring focus:outline-none border-0 py-1 px-3  mt-4 md:mt-0">
