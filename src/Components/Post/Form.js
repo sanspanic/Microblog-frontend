@@ -1,16 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { ArrowCircleLeft } from "phosphor-react";
+import PostsContext from "../../Context/PostsContext";
+import BlogApi from "../../api";
 
-const Form = ({ title, description, body }) => {
+const Form = ({ title, description, body, postId, setIsEditing, setPost }) => {
+  const { setPosts } = useContext(PostsContext);
   const initialFormData = title
     ? { title, description, body }
     : { title: "", description: "", body: "" };
   const history = useHistory();
   const [formData, setFormData] = useState(initialFormData);
 
-  const handleSubmit = () => {
-    title ? history.push("/") : console.log("use id to push back to post page");
+  const addNewPost = async (formData) => {
+    //make API call
+    try {
+      const res = await BlogApi.addNewPost(formData);
+      console.log(res);
+      setPosts(res);
+      history.push("/");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const updatePost = async (data, id) => {
+    try {
+      const res = await BlogApi.updatePost(data, id);
+      console.log(res);
+      setIsEditing(false);
+      setPost(res);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    title ? updatePost(formData, postId) : addNewPost(formData);
   };
 
   const handleChange = (e) => {
@@ -21,6 +48,10 @@ const Form = ({ title, description, body }) => {
     }));
   };
 
+  const handleGoBack = () => {
+    title ? setIsEditing(false) : history.push("/");
+  };
+
   return (
     <section className="text-gray-700 body-font">
       <div className="flex flex-col container sm:px-8 py-2 sm:py-10 lg:px-4">
@@ -28,11 +59,11 @@ const Form = ({ title, description, body }) => {
           onSubmit={handleSubmit}
           className="flex flex-col w-full p-8 mx-auto  border rounded-lg lg:w-4/6 md:w-5/6 md:ml-auto md:mt-0"
         >
-          <Link className="self-start" to="/">
+          <button className="self-start" onClick={handleGoBack}>
             <button className="font-semibold text-black hover:text-indigo-500 transition ease-in-out duration-500">
               <ArrowCircleLeft className="inline" size={24} /> Cancel
             </button>
-          </Link>
+          </button>
           <div className="relative ">
             <label htmlFor="title" className="text-sm leading-7 text-gray-600">
               Title

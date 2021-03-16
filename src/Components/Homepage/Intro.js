@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import duotone1 from "../../Assets/Imgs/duotone1.png";
 import duotone2 from "../../Assets/Imgs/duotone2.png";
 import duotone3 from "../../Assets/Imgs/duotone3.png";
@@ -6,8 +6,12 @@ import duotone4 from "../../Assets/Imgs/duotone4.png";
 import duotone5 from "../../Assets/Imgs/duotone5.png";
 import duotone6 from "../../Assets/Imgs/duotone6.png";
 import Logo from "../../Assets/Imgs/Logo8_Navy.svg";
+import Modal from "./Modal";
 
-const Intro = () => {
+const Intro = ({ setShowModals }) => {
+  const handleAppClick = () => {
+    setShowModals(true);
+  };
   return (
     <section className="text-gray-600 body-font">
       <div className="container py-32 md:py-0 mx-auto flex flex-col px-5 justify-center items-center ">
@@ -72,7 +76,10 @@ const Intro = () => {
           </p>
 
           <div className="flex">
-            <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+            <button
+              onClick={handleAppClick}
+              className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -86,7 +93,10 @@ const Intro = () => {
                 <span className="title-font font-medium">Google Play</span>
               </span>
             </button>
-            <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center ml-4 hover:bg-gray-200 focus:outline-none">
+            <button
+              onClick={handleAppClick}
+              className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center ml-4 hover:bg-gray-200 focus:outline-none"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"

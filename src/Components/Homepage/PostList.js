@@ -22,7 +22,7 @@ const PostList = () => {
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">
-      <h2 className="text-left font-bold text-black text-4xl sm:ml-4 md: md:ml-10">
+      <h2 className="text-left font-bold text-indigo-500 text-4xl sm:ml-4 md: md:ml-10">
         All Blog Posts <ArrowRight className="inline" size={24} />
         <ArrowRight className="inline" size={24} />
         <ArrowRight className="inline" size={24} />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
 
 const CommentForm = ({ addComment }) => {
   const initialFormData = { comment: "" };
@@ -14,7 +15,7 @@ const CommentForm = ({ addComment }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addComment(formData.comment);
+    addComment({ text: formData.comment, id: uuid() });
     setFormData(initialFormData);
   };
   return (
@@ -27,7 +28,7 @@ const CommentForm = ({ addComment }) => {
           Add Comment
         </label>
         <textarea
-          className="w-4/6 px-4 py-2 mb-4 text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg mr-4text-base focus:border-gray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+          className="w-11/12 sm:w-4/6 px-4 py-2 mb-4 text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg mr-4text-base focus:border-gray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
           name="comment"
           id="comment"
           type="textarea"

@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Intro from "./Intro";
 import PostList from "./PostList";
 import "./Homepage.css";
+import Modal from "./Modal";
 
 const Homepage = () => {
+  const [showModals, setShowModals] = useState(false);
   return (
     <div className="Homepage">
-      <Intro />
-      <PostList />
+      {showModals && <Modal setShowModals={setShowModals} />}
+      {!showModals && (
+        <>
+          <Intro setShowModals={setShowModals} showModals={showModals} />
+          <PostList />
+        </>
+      )}
     </div>
   );
 };

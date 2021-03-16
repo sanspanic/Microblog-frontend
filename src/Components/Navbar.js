@@ -4,7 +4,7 @@ import Logo from "../Assets/Imgs/Logo8_Navy.svg";
 
 const Navbar = () => {
   return (
-    <header className="text-gray-600 body-font border-b-2 border-black">
+    <header className="background text-gray-600 body-font border-b-2 border-black">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link
           to="/"

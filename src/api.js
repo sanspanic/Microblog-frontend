@@ -24,6 +24,27 @@ class BlogApi {
     let res = await this.request(`posts`);
     return res;
   }
+
+  // [GET] /posts/:id -> gets one post by id
+  static async getPostById(id) {
+    let res = await this.request(`posts/${id}`);
+    return res;
+  }
+  // [POST] /posts -> add new post to database
+  static async addNewPost(data) {
+    let res = await this.request(`posts`, data, "post");
+    return res;
+  }
+  // [PUT] /posts/:id -> update existing post
+  static async updatePost(data, id) {
+    let res = await this.request(`posts/${id}`, data, "put");
+    return res;
+  }
+  // [DELETE] /posts/:id -> delete existing post
+  static async deletePost(id) {
+    let res = await this.request(`posts/${id}`, {}, "delete");
+    return res;
+  }
 }
 
 export default BlogApi;
