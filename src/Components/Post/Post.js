@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import duotone1 from "../../Assets/Imgs/duotone1.png";
+import duotone8 from "../../Assets/Imgs/duotone8.png";
 import { PenNib, Trash } from "phosphor-react";
 import CommentForm from "./CommentForm";
 import CommentSection from "./CommentSection";
@@ -61,7 +61,7 @@ const Post = () => {
         <img
           alt="book"
           className="mx-auto sm:w-5/6 md:w-4/6"
-          src={duotone1}
+          src={duotone8}
         ></img>
         <h1 className="text-4xl py-10 font-black">{post.title}</h1>
         <p className="pb-5 italic w-4/6 md:w-2/6 mx-auto">{post.description}</p>

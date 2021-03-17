@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Homepage from "./Homepage/Homepage";
 import NewPost from "./Post/NewPost";
 import Post from "./Post/Post";
+import Modal from "./Homepage/Modal";
 
 const Routes = () => {
   return (
@@ -12,6 +13,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/new">
         <NewPost />
+      </Route>
+      <Route exact path="/oops">
+        <Modal />
       </Route>
       <Route exact path="/:postId">
         <Post />

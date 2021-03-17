@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import duotone1 from "../../Assets/Imgs/duotone1.png";
 import duotone2 from "../../Assets/Imgs/duotone2.png";
 import duotone3 from "../../Assets/Imgs/duotone3.png";
@@ -13,9 +14,10 @@ import duotone11 from "../../Assets/Imgs/duotone11.png";
 import duotone12 from "../../Assets/Imgs/duotone12.png";
 import Logo from "../../Assets/Imgs/logo.png";
 
-const Intro = ({ setShowModals }) => {
+const Intro = () => {
+  const history = useHistory();
   const handleAppClick = () => {
-    setShowModals(true);
+    history.push("/oops");
   };
   return (
     <section className="text-gray-600 body-font">

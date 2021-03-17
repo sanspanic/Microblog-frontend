@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { SmileyXEyes } from "phosphor-react";
+import { useHistory } from "react-router-dom";
 
-const Modal = ({ setShowModals }) => {
+const Modal = () => {
+  const history = useHistory();
   const [isBouncing, setIsBouncing] = useState(true);
   const className = isBouncing ? "animate-bounce" : "";
   useEffect(() => {
@@ -17,7 +19,7 @@ const Modal = ({ setShowModals }) => {
       <p className="font-bold text-indigo-500 text-4xl p-2">LOL JK!</p>
       <p>This is not a real feature. Sorry about that.</p>
       <button
-        onClick={() => setShowModals(false)}
+        onClick={() => history.push("/")}
         className="text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-indigo-800 focus:ring focus:outline-none  border-0 py-1 px-3 my-5"
       >
         Return
