@@ -46,6 +46,11 @@ class BlogApi {
     let res = await this.request(`posts/${id}`, {}, "delete");
     return res;
   }
+  // [POST] /posts/:id/vote/:direction -> vote on existing post
+  static async addVote(id, direction) {
+    let res = await this.request(`posts/${id}/vote/${direction}`, {}, "post");
+    return res;
+  }
 
   //COMMENTS
 

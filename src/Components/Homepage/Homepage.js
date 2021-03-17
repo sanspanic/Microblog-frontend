@@ -7,7 +7,7 @@ const Homepage = () => {
   return (
     <div className="Homepage">
       <Intro />
-      <PostList />)
+      <PostList />
     </div>
   );
 };

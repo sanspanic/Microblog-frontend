@@ -13,7 +13,7 @@ const Modal = () => {
   }, []);
   return (
     <div
-      className={`${className} bg-indigo-50 my-16 p-2 flex flex-col items-center w-4/6 mx-auto border-2 border-pink-500 shadow-2xl rounded`}
+      className={`${className} background3 bg-indigo-50 my-16 p-2 flex flex-col items-center w-4/6 mx-auto border-2 border-indigo-500 shadow-2xl rounded`}
     >
       <SmileyXEyes className="m-2" size={60} />
       <p className="font-bold text-indigo-500 text-4xl p-2">LOL JK!</p>
