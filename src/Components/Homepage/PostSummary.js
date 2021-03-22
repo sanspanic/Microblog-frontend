@@ -4,9 +4,6 @@ import PostsContext from "../../Context/PostsContext";
 import VotingThumbs from "./VotingThumbs";
 
 const PostSummary = ({ title, description, id, votes }) => {
-  const { posts, setPosts } = useContext(PostsContext);
-  console.log(posts);
-
   return (
     <div
       id="summary"

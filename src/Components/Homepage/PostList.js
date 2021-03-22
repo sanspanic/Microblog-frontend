@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { ArrowRight } from "phosphor-react";
 import PostSummary from "./PostSummary";
 import { v4 as uuid } from "uuid";
 import PostsContext from "../../Context/PostsContext";
-import BlogApi from "../../api";
 
 const PostList = () => {
-  const { posts, setPosts } = useContext(PostsContext);
+  const { posts } = useContext(PostsContext);
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">

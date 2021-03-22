@@ -30,7 +30,7 @@ const Post = () => {
   };
   const removeComment = async (comment, commentId) => {
     try {
-      const res = await BlogApi.removeComment(postId, commentId);
+      await BlogApi.removeComment(postId, commentId);
       //console.log(res);
       setComments(comments.filter((c) => c !== comment));
     } catch (e) {
@@ -41,7 +41,7 @@ const Post = () => {
   useEffect(() => {
     const getPost = async (id) => {
       const res = await BlogApi.getPostById(id);
-      console.log("GOT POST BY ID ", res);
+      //console.log("GOT POST BY ID ", res);
       setPost(res);
       //console.log(res.comments);
       setComments(res.comments);
@@ -52,7 +52,7 @@ const Post = () => {
 
   const handleDelete = async () => {
     try {
-      const res = await BlogApi.deletePost(postId);
+      await BlogApi.deletePost(postId);
       setPosts(posts.filter((p) => p.id != postId));
       //console.log(res);
       history.push("/");
@@ -111,7 +111,7 @@ const Post = () => {
         )}
         {!isEditing && (
           <>
-            <div className="post p-10 text-center max-w-prose border border-gray-300 mx-auto rounded mb-10 leading-relaxed nunito">
+            <div className="mt-5 post p-2 sm:p-10 md:pt-2 text-center max-w-prose mx-auto mb-10 leading-relaxed border-l-2 border-orchid bg-opacity-20  font-mono text-sm">
               <ReactMarkdown children={post.body} />
             </div>
             <CommentSection comments={comments} removeComment={removeComment} />

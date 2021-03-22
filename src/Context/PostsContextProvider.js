@@ -9,8 +9,8 @@ const PostsContextProvider = ({ children }) => {
     const getPosts = async () => {
       try {
         const res = await BlogApi.getAllPosts();
-        console.log("RETRIEVED NEW BLOG POSTS: ");
-        console.log(res);
+        //console.log("RETRIEVED NEW BLOG POSTS: ");
+        //console.log(res);
         setPosts(res);
       } catch (e) {
         console.log(e);
@@ -21,24 +21,17 @@ const PostsContextProvider = ({ children }) => {
 
   const handleVote = async (id, direction, title, description, votes) => {
     try {
-      const res = await BlogApi.addVote(id, direction);
-      console.log(res);
+      await BlogApi.addVote(id, direction);
+
       let delta = direction === "up" ? +1 : -1;
       const allPostsWithoutCurrent = posts.filter((p) => p.id != id);
-      console.log("FILTERED POSTS: ", allPostsWithoutCurrent);
+      //console.log("FILTERED POSTS: ", allPostsWithoutCurrent);
       //sorts array by id otherwise list keeps rearranging on each state change
       const newPosts = [
         ...allPostsWithoutCurrent,
         { id: +id, description, title, votes: votes + delta },
       ].sort((a, b) => a.id - b.id);
-      console.log("adding this object into new post list: ", {
-        id: +id,
-        description,
-        title,
-        votes: votes + delta,
-      });
       setPosts(newPosts);
-      console.log("JUST SET NEW POSTS: ", newPosts);
     } catch (e) {
       console.log(e);
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Intro from "./Intro";
 import PostList from "./PostList";
 import "./Homepage.css";

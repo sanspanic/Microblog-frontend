@@ -1,11 +1,5 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import duotone1 from "../../Assets/Imgs/duotone1.png";
-import duotone2 from "../../Assets/Imgs/duotone2.png";
-import duotone3 from "../../Assets/Imgs/duotone3.png";
-import duotone4 from "../../Assets/Imgs/duotone4.png";
-import duotone5 from "../../Assets/Imgs/duotone5.png";
-import duotone6 from "../../Assets/Imgs/duotone6.png";
 import duotone7 from "../../Assets/Imgs/duotone7.png";
 import duotone8 from "../../Assets/Imgs/duotone8.png";
 import duotone9 from "../../Assets/Imgs/duotone9.png";
