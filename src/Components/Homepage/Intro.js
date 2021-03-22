@@ -77,10 +77,10 @@ const Intro = () => {
             <p className="tracking-widest font-mono"> My2Cents</p>
           </h1>
           <p className="my-8 text-sm sm:text-lg sm:leading-relaxed">
-            This is a microblog. Kickstarter biodiesel roof party wayfarers
-            cold-pressed. Palo santo live-edge tumeric scenester copper mug
-            flexitarian. Prism vice offal plaid everyday carry. Gluten-free chia
-            VHS squid listicle artisan.
+            This is a microblog written exclusively in hipster ipsum.
+            Kickstarter biodiesel roof party wayfarers cold-pressed. Palo santo
+            live-edge tumeric scenester copper mug flexitarian. Prism vice offal
+            plaid everyday carry. Gluten-free chia VHS squid listicle artisan.
           </p>
 
           <div className="flex">

@@ -1,5 +1,6 @@
 import axios from "axios";
-const BASE_URL = "http://localhost:5000/api";
+//const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "https://micro-blog-react.herokuapp.com/api";
 
 //static API class tying together methods used to communicate with API
 

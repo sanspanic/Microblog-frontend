@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         orchid: "#c183e0;",
       },
+      fontFamily: {
+        nunito: ["Nunito", "serif"],
+      },
     },
   },
   variants: {

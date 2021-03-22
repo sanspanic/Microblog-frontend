@@ -8,6 +8,7 @@ import BlogApi from "../../api";
 import { useParams, useHistory } from "react-router-dom";
 import VotingThumbs from "../Homepage/VotingThumbs";
 import PostsContext from "../../Context/PostsContext";
+import ReactMarkdown from "react-markdown";
 
 const Post = () => {
   const history = useHistory();
@@ -110,9 +111,9 @@ const Post = () => {
         )}
         {!isEditing && (
           <>
-            <p className="p-5 text-center max-w-prose border border-gray-300 mx-auto rounded mb-10">
-              {post.body}
-            </p>
+            <div className="post p-10 text-center max-w-prose border border-gray-300 mx-auto rounded mb-10 leading-relaxed nunito">
+              <ReactMarkdown children={post.body} />
+            </div>
             <CommentSection comments={comments} removeComment={removeComment} />
             <CommentForm addComment={addComment} postId={postId} />
           </>
